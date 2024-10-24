@@ -8,11 +8,11 @@ function openModal(cardId, isTwoPage) {
     modal.classList.remove("hidden");
 
     // Load the first page image (attempt .jpg, fallback to .png)
-    loadImage(modalImage, "images/" + cardId + "_page1.jpg", "images/" + cardId + ".png");
+    loadImage(modalImage,  cardId + "_page1.jpg", cardId + ".png");
 
     if (isTwoPage) {
         secondPage.classList.remove("hidden");  // Show the second page for two-page cards
-        loadImage(document.getElementById("modalImage2"), "images/" + cardId + "_page2.jpg", "images/" + cardId + "_page2.png");
+        loadImage(document.getElementById("modalImage2"), cardId + "_page2.jpg", cardId + "_page2.png");
     } else {
         secondPage.classList.add("hidden");  // Hide the second page for single-page cards
     }
