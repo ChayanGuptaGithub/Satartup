@@ -7,16 +7,20 @@ function openModal(cardId, isTwoPage) {
     modal.classList.add("show");
     modal.classList.remove("hidden");
 
-    // Load the first page image (attempt .jpg, fallback to .png)
-    loadImage(modalImage,  cardId + "_page1.jpg", cardId + ".png");
-
     if (isTwoPage) {
-        secondPage.classList.remove("hidden");  // Show the second page for two-page cards
-        loadImage(document.getElementById("modalImage2"), cardId + "_page2.jpg", cardId + "_page2.png");
+        // Load the first page of the two-page card
+        loadImage(modalImage, "images/" + cardId + "_page1.jpg", "images/" + cardId + "_page1.png");
+
+        // Show and load the second page
+        secondPage.classList.remove("hidden");
+        loadImage(document.getElementById("modalImage2"), "images/" + cardId + "_page2.jpg", "images/" + cardId + "_page2.png");
     } else {
-        secondPage.classList.add("hidden");  // Hide the second page for single-page cards
+        // Single page card logic
+        loadImage(modalImage, "images/" + cardId + ".jpg", "images/" + cardId + ".png");
+        secondPage.classList.add("hidden"); // Hide the second page element if single-page
     }
 }
+
 // Helper function to check if .jpg exists, else fallback to .png
 function loadImage(imgElement, jpgPath, pngPath) {
     var img = new Image();
