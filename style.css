@@ -156,14 +156,10 @@ img {
 }
 
 .modal-content {
-    position: relative;
-    width: 45%; /* Adjust as needed */
-    max-width: 600px;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
+    width: 45%; /* Adjust width to fit two pages side by side */
+    max-width: 500px; /* Smaller width for better visibility */
+    margin: 10px; /* Add margin between two images */
 }
-
 .modal-image {
     width: 100%;
     height: auto;
@@ -183,9 +179,8 @@ img {
 }
 
 #secondPage {
-    margin-left: 20px;
+    width: 45%; /* Set the same width for the second page */
 }
-
 .close {
     position: absolute;
     top: 10px;
@@ -200,10 +195,10 @@ img {
 }
 
 .modal.show {
-    display: flex; /* Show modal when active */
-    flex-wrap: wrap;
-    align-items: flex-start; /* Align items to the top */
-    overflow-y: auto; /* Add scroll bar for modal content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add space between two pages */
 }
 
 .modal.show .modal-content {
