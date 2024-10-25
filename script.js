@@ -9,14 +9,14 @@ function openModal(cardId, isTwoPage) {
 
     if (isTwoPage) {
         // Load the first page of the two-page card
-        loadImage(modalImage, "images/" + cardId + "_page1.jpg", "images/" + cardId + "_page1.png");
+        loadImage(modalImage,  cardId + "_page1.jpg", + cardId + "_page1.png");
 
         // Show and load the second page
         secondPage.classList.remove("hidden");
-        loadImage(document.getElementById("modalImage2"), "images/" + cardId + "_page2.jpg", "images/" + cardId + "_page2.png");
+        loadImage(document.getElementById("modalImage2"), cardId + "_page2.jpg", cardId + "_page2.png");
     } else {
         // Single page card logic
-        loadImage(modalImage, "images/" + cardId + ".jpg", "images/" + cardId + ".png");
+        loadImage(modalImage, cardId + ".jpg", cardId + ".png");
         secondPage.classList.add("hidden"); // Hide the second page element if single-page
     }
 }
